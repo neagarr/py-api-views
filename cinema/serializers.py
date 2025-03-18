@@ -19,16 +19,16 @@ class GenreSerializer(serializers.Serializer):
 
 class ActorSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-    firstname = serializers.CharField(max_length=255)
-    lastname = serializers.CharField(max_length=255)
+    first_name = serializers.CharField(max_length=255)
+    last_name = serializers.CharField(max_length=255)
 
     def create(self, validated_data):
         return Actor.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         instance.id = validated_data.get("id", instance.id)
-        instance.firstname = validated_data.get("firstname", instance.firstname)
-        instance.lastname = validated_data.get("lastname", instance.lastname)
+        instance.first_name = validated_data.get("first_name", instance.first_name)
+        instance.last_name = validated_data.get("last_name", instance.last_name)
 
         instance.save()
         return instance

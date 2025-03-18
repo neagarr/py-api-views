@@ -12,15 +12,15 @@ class Genre(models.Model):
 
 
 class Actor(models.Model):
-    firstname = models.CharField(max_length=50)
-    lastname = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
 
     class Meta:
-        ordering = ("firstname",)
+        ordering = ("first_name",)
         verbose_name_plural = "actors"
 
     def __str__(self):
-        return f"{self.firstname} {self.lastname}"
+        return f"{self.first_name} {self.last_name}"
 
 
 class CinemaHall(models.Model):
