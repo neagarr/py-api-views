@@ -30,7 +30,7 @@ class CinemaHall(models.Model):
 
     class Meta:
         ordering = ("name",)
-        verbose_name_plural = "cinemahalls"
+        verbose_name_plural = "cinema_halls"
 
     def __str__(self):
         places = int(self.rows) * int(self.seats_in_row)
